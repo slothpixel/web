@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --text-color: 255, 255, 255, 0.87;
+    --background-rgb: 25, 32, 35;
+    --background-start-rgb: 26, 43, 62;
+    --background-end-rgb: 20, 30, 48;
+}
+
+
+body {
+    color: rgba(var(--text-color));
+    background: rgb(var(--background-rgb)) linear-gradient(
+            to right,
+            rgb(var(--background-start-rgb)),
+            rgb(var(--background-end-rgb))
+    );
+}
+
+a {
+    color: rgb(102, 187, 255);
+}
+
+a:hover {
+    color: rgba(255, 255, 255, 0.87);
+}
+
+.pageLink {
+    &::after {
+        content: "•";
+        margin: 0 8px;
+        opacity: 0.6;
+        color: rgba(var(--text-color));
+    }
+    &:last-child {
+        &::after {
+            content: "";
+            margin: 0;
+        }
+    }
+}
